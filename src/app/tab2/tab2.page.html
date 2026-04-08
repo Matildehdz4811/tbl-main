@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <div class="header-image-container">
+      <img src="../assets/TBCST.jpeg" alt="Logo">
+    </div>
+    <ion-title>Educación Ambiental </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recursos para aprender</ion-card-title>
+    </ion-card-header>
+
+    <ion-list>
+
+      <ion-item
+        *ngFor="let enlace of enlaces"
+        button
+        [href]="enlace.url"
+        target="_blank">
+
+        {{ enlace.titulo }}
+
+      </ion-item>
+
+    </ion-list>
+
+  </ion-card>
+
+</ion-content>

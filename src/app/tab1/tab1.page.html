@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <div class="header-image-container">
+      <img src="../assets/TBCST.jpeg" alt="Logo">
+    </div>
+    <ion-title>Registro Reciclaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registro de Reciclaje</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <!-- MATERIAL -->
+      <ion-item>
+        <ion-label>Material</ion-label>
+        <ion-select [(ngModel)]="material">
+          <ion-select-option [value]="1">Plástico</ion-select-option>
+          <ion-select-option [value]="2">Vidrio</ion-select-option>
+          <ion-select-option [value]="3">Papel</ion-select-option>
+          <ion-select-option [value]="4">Orgánico</ion-select-option>
+          <ion-select-option value="otro">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <!-- OTRO MATERIAL -->
+      <ion-item *ngIf="material === 'otro'">
+        <ion-input
+          placeholder="Especifica qué material es..."
+          [(ngModel)]="otroMaterial">
+        </ion-input>
+      </ion-item>
+
+      <!-- CANTIDAD -->
+      <ion-item>
+        <ion-input
+          type="number"
+          [placeholder]="obtenerPlaceholderCantidad()"
+          [(ngModel)]="cantidad">
+        </ion-input>
+      </ion-item>
+
+      <!-- FOTO -->
+      <ion-item>
+        <ion-label position="stacked">Evidencia (Foto)</ion-label>
+
+        <ion-button fill="outline" expand="block" (click)="tomarFoto()" style="margin-top: 10px;">
+          <ion-icon slot="start" name="camera-outline"></ion-icon>
+          Tomar Foto
+        </ion-button>
+
+        <ion-button fill="outline" expand="block" color="secondary" (click)="elegirDeGaleria()" style="margin-top: 10px;">
+          <ion-icon slot="start" name="image-outline"></ion-icon>
+          Elegir de Galería
+        </ion-button>
+      </ion-item>
+
+      <!-- PREVIEW -->
+       <ion-item *ngIf="fotoBase64">
+        <img [src]="'data:image/jpeg;base64,' + fotoBase64" style="width: 100%; border-radius: 8px;" />
+      </ion-item>
+
+
+      <!-- BOTÓN -->
+      <ion-button expand="block" (click)="registrarReciclaje()">
+        Registrar
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

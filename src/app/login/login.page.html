@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title>LOGIN</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Logo arriba -->
+  <div class="header-image-container">
+    <img src="assets/logo.png" alt="Logo">
+  </div>
+
+  <!-- Card de login -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Iniciar Sesión</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item fill="outline">
+        <ion-input label="CURP" labelPlacement="floating" [(ngModel)]="login.curp"></ion-input>
+      </ion-item>
+
+      <ion-item fill="outline" class="ion-margin-top">
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="login.password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="iniciarSesion()" class="ion-margin-top">
+        ENTRAR
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

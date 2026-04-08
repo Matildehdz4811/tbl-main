@@ -1,0 +1,300 @@
+/* =========================================
+   FONDO Y ESTRUCTURA GENERAL
+   ========================================= */
+ion-content {
+  --background: radial-gradient(circle at top, #c8e6c9 0%, #2e7d32 70%);
+}
+
+.dark-bg {
+  --background: #c8e6c9;
+}
+
+/* =========================================
+   TOOLBAR Y CABECERA
+   ========================================= */
+.custom-toolbar {
+  --background: #2e7d32;
+  --color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #66bb6a;
+  box-shadow: 0 0 15px #66bb6a;
+}
+
+ion-title {
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #66bb6a;
+}
+
+/* =========================================
+   TARJETAS Y TEXTOS NEÓN
+   ========================================= */
+.neon-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #2e7d32;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(46, 125, 50, 0.4);
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.neon-card:hover {
+  box-shadow: 0 0 25px #66bb6a, 0 0 50px #66bb6a;
+}
+
+.neon-text {
+  color: #2e7d32 !important;
+  text-shadow: 0 0 5px #66bb6a;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* =========================================
+   PERFIL: DISTRIBUCIÓN Y CONTENEDORES
+   ========================================= */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.profile-title {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.profile-fullname {
+  font-size: 1.1rem;
+  color: #2e7d32;
+  text-transform: capitalize;
+  margin: 5px 0 15px 0;
+  text-align: center;
+}
+
+.profile-data-card {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.action-buttons-container {
+  width: 90%;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   PERFIL: AVATAR Y EDICIÓN DE FOTO
+   ========================================= */
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 15px #66bb6a, 0 0 30px #2e7d32;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #66bb6a, 0 0 50px #2e7d32;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estado de edición del avatar */
+.profile-image.editing {
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+.edit-photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 125, 50, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.edit-photo-overlay label {
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px #66bb6a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================
+   INPUTS Y LISTAS
+   ========================================= */
+.custom-item {
+  --background: #ffffff;
+  --color: #2e7d32;
+  --highlight-color-focused: #66bb6a;
+  --border-color: #66bb6a;
+  margin-bottom: 10px;
+}
+
+.custom-item ion-input {
+  --color: #2e7d32;
+}
+
+.transparent-list {
+  background: transparent;
+}
+
+.info-label {
+  color: #2e7d32;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.info-value {
+  color: #000000;
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* =========================================
+   BOTONES Y ACCIONES
+   ========================================= */
+.neon-button {
+  --background: #2e7d32;
+  --background-hover: #66bb6a;
+  --background-activated: #66bb6a;
+  --box-shadow: 0 0 10px #66bb6a;
+  --color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 20px #66bb6a, 0 0 40px #2e7d32;
+}
+
+/* Botones específicos de edición */
+.btn-guardar {
+  --background: #66bb6a !important;
+  --color: #000000 !important;
+  --box-shadow: 0 0 15px #66bb6a !important;
+}
+
+.btn-guardar:hover {
+  box-shadow: 0 0 20px #66bb6a, 0 0 40px #2e7d32 !important;
+}
+
+.btn-cancelar {
+  --color: #2e7d32 !important;
+  --border-color: #2e7d32 !important;
+  --background: transparent !important;
+  margin-top: 15px;
+}
+
+.btn-cancelar:hover {
+  background: rgba(46, 125, 50, 0.1) !important;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (min-width: 768px) {
+  .profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 2px solid #2e7d32;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 30px rgba(46, 125, 50, 0.2);
+  }
+
+  .profile-data-card,
+  .edit-id-container,
+  .edit-name-row,
+  .action-buttons-container {
+    width: 100%;
+  }
+}
+
+/* Segmento principal */
+ion-segment {
+  margin: 12px 0;
+  --background: linear-gradient(
+    to right,
+    #1b3d2f, /* verde muy oscuro */
+    #2e5d3f, /* verde medio oscuro */
+    #4caf50, /* verde estándar */
+    #81c784, /* verde claro */
+    #c8e6c9  /* verde muy claro */
+  );
+  border-radius: 10px;
+  padding: 4px;
+}
+
+/* Botones del segmento */
+ion-segment-button {
+  --color: #fff; /* texto normal */
+  --color-checked: #1b3d2f; /* texto activo */
+  --background: transparent;
+  --background-checked: #a5d6a7; /* verde claro al seleccionar */
+  border-radius: 8px;
+  margin: 0 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Hover y focus */
+ion-segment-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #1b3d2f;
+}
+
+/* Label dentro del botón */
+ion-segment-button ion-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contenido de cada segmento */
+ion-segment-content {
+  padding: 16px;
+  background: #f1f8e9; /* verde muy claro */
+  border-radius: 10px;
+  margin-top: 12px;
+  color: #1b3d2f;
+  box-shadow: 0 4px 12px rgba(27, 61, 47, 0.2);
+}

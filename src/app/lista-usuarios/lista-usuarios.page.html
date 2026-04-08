@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Administrar Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-avatar slot="start">
+  <img [src]="usuario.foto ? 'data:image/jpeg;base64,' + usuario.foto : 'assets/no-avatar.png'" />
+</ion-avatar>
+
+      <ion-label>
+        <h2>{{ usuario.nombre }}</h2>
+        <p>CURP: {{ usuario.curp }}</p>
+      </ion-label>
+
+      <ion-button slot="end" fill="clear" (click)="irAEditar(usuario)">
+        <ion-icon name="create-outline"></ion-icon>
+        Editar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

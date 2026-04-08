@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <div class="header-image-container">
+      <img src="../assets/TBCST.jpeg" alt="Logo">
+    </div>
+    <ion-title>Ubicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card id="mapa">
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ nombreUbicacion || 'Mapa de Puntos de Reciclaje ♻️' }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- MAPA dinámico con URL segura -->
+      <iframe
+        *ngIf="mapaUrl"
+        [src]="mapaUrl"
+        width="100%"
+        height="300"
+        style="border:0; border-radius:10px;"
+        loading="lazy">
+      </iframe>
+
+      <ion-button expand="block" (click)="abrirEnGoogleMaps()" style="margin-top: 10px;">
+        Abrir en Google Maps
+      </ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
