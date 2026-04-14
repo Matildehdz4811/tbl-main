@@ -68,3 +68,43 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+# Dependencias (Las carpetas pesadas)
+node_modules/
+**/node_modules/
+jspm_packages/
+
+# Carpetas de compilación y temporales
+.angular/
+.ionic/
+www/
+dist/
+out/
+build/
+.gradle/
+.sourcemaps/
+
+# Variables de entorno (¡Seguridad!)
+.env
+.env.local
+.env.*.local
+
+# Archivos del Sistema Operativo
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs y Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+node_modules/
+**/node_modules/
